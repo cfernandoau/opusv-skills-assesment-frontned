@@ -1,6 +1,10 @@
 import  axios from  'axios';
 
 const instance = axios.create({
-    baseURL: 'http://localhost:8080/index.php/'
+    baseURL: 'https://opusv-skills-assesment.teatop.com.au/'
 })
+
+instance.defaults.headers.common['Authorization'] = 'AUTH TOKEN FROM INSTANCE';
+
+
 export default  instance;

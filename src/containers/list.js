@@ -8,6 +8,10 @@ class ApplicantsList extends Component {
     }
 
     componentDidMount() {
+        this.loadApplicantsList()
+    }
+
+    loadApplicantsList(){
         axios.get('applicants')
             .then(response => {
                 const updatedApplicants = response.data.map(applicants => {
@@ -17,12 +21,23 @@ class ApplicantsList extends Component {
                 });
                 this.setState({applicants: updatedApplicants});
             });
+}
+
+    deleteApplicantHandler = (id) => {
+
+
+        if (window.confirm("Delete the item?")) {
+            axios.delete('/applicants/' + id)
+                .then(response => {
+                    this.loadApplicantsList()
+                });
+        }
     }
 
     render() {
         return (
             <div>
-                <ApplicantsTable applicants={this.state.applicants}/>
+                <ApplicantsTable delete={this.deleteApplicantHandler} applicants={this.state.applicants}/>
             </div>
 
         )
