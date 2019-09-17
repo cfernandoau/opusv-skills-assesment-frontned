@@ -9,7 +9,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
 import AddIcon from '@material-ui/icons/PermIdentityRounded';
-import axios from '../../axios-applicants';
+import axios from '../axios-applicants';
 import { Redirect ,Link} from 'react-router-dom'
 
 

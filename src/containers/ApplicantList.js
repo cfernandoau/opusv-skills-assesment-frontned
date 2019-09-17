@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import axios from '../axios-applicants';
-import ApplicantsTable from "../components/ApplicantsTable";
+import ApplicantTable from "../components/ApplicantTable";
 
-class ApplicantsList extends Component {
+class ApplicantList extends Component {
     state = {
         applicants: []
     }
@@ -37,11 +37,11 @@ class ApplicantsList extends Component {
     render() {
         return (
             <div>
-                <ApplicantsTable delete={this.deleteApplicantHandler} applicants={this.state.applicants}/>
+                <ApplicantTable delete={this.deleteApplicantHandler} applicants={this.state.applicants}/>
             </div>
 
         )
     }
 }
 
-export default ApplicantsList;
+export default ApplicantList;

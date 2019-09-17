@@ -11,9 +11,8 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import {Link} from "react-router-dom";
-export default function ApplicantsTable(props) {
+export default function ApplicantTable(props) {
 
-    console.log(props.applicants)
     let applicantsList=[]
     if(props.applicants) {
          applicantsList = props.applicants.map(applicant => {

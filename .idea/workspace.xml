@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2bf46691-a2b4-4695-94c8-8e134c2b2f57" name="Default Changelist" comment="" />
+    <list default="true" id="2bf46691-a2b4-4695-94c8-8e134c2b2f57" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/containers/Auth.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/Auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/actions/actionTypes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/actions/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/actions/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducers/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/utility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ApplicantsTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ApplicantTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/applicant/Add.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ApplicantForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ApplicantList.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,12 +34,25 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="ProjectId" id="1QoictIZCcM5h0K8ZPO6bNplszy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -30,6 +60,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\REACT\opusv-skills-assesment\src\components" />
+      <recent name="D:\REACT\opusv-skills-assesment\src\store\actions" />
+      <recent name="D:\REACT\opusv-skills-assesment\src\store\reducers" />
       <recent name="D:\REACT\opusv-skills-assesment\src" />
     </key>
   </component>
@@ -55,11 +88,37 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568443431752</updated>
-      <workItem from="1568443433008" duration="9519000" />
+      <workItem from="1568443433008" duration="21074000" />
+      <workItem from="1568520335157" duration="35497000" />
+      <workItem from="1568611636459" duration="17380000" />
+      <workItem from="1568705638015" duration="9448000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/menu.js</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
