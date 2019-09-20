@@ -81,7 +81,7 @@
       <workItem from="1568611636459" duration="17380000" />
       <workItem from="1568705638015" duration="22507000" />
       <workItem from="1568837932215" duration="2904000" />
-      <workItem from="1568841836563" duration="34068000" />
+      <workItem from="1568841836563" duration="35372000" />
     </task>
     <task id="LOCAL-00001" summary="Auth form completed">
       <created>1568718855913</created>
@@ -97,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568942420036</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Final commit">
+      <created>1568943476581</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568943476581</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,7 +125,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Auth form completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Auth form completed" />
+    <MESSAGE value="Final commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
