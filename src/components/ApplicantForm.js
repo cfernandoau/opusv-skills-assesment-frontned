@@ -9,8 +9,9 @@ import {makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
 import AddIcon from '@material-ui/icons/PermIdentityRounded';
-import axios from '../axios-applicants';
-import { Redirect ,Link} from 'react-router-dom'
+import axios from '../axios';
+import {Redirect, Link} from 'react-router-dom'
+import {connect} from "react-redux";
 
 
 const useStyles = makeStyles(theme => ({
@@ -38,9 +39,8 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function AddApplicantForm(props) {
+function AddApplicantForm(props) {
     const classes = useStyles();
-
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [discordId, setDiscordId] = useState("");
@@ -48,7 +48,7 @@ export default function AddApplicantForm(props) {
 
     useEffect(() => {
         loadApplicant()
-    },[])
+    }, [])
 
     const postDataHandler = () => {
         const data = {
@@ -61,27 +61,30 @@ export default function AddApplicantForm(props) {
         /**
          *  if id is passed then update applicant else add applicant
          * */
-        if(hasId()){
-            axios.put('/applicants/'+hasId(), data)
-                .then(response => {
-                    if(response.status===200){
 
+        let config = {
+            headers: {'Authorization': "bearer " + props.token}
+        };
+
+        if (hasId()) {
+            axios.put('/applicants/' + hasId(), data, config)
+                .then(response => {
+                    if (response.status === 200) {
                         alert("Update Successful!")
-                        return   <Redirect to='/' />
-                    }else{
+                        return <Redirect to='/'/>
+                    } else {
                         alert("Ooops! something went wrong")
                     }
                 });
-        }
-        else{
-            axios.post('/applicants', data)
+        } else {
+            axios.post('/applicants', data, config)
                 .then(response => {
                     console.log(response.status)
-                    if(response.status===201){
+                    if (response.status === 201) {
                         clearForm()
                         alert("Applicant added successfully!")
-                        return <Redirect to='/' />
-                    }else{
+                        return <Redirect to='/'/>
+                    } else {
                         alert("Ooops! something went wrong")
                     }
                 });
@@ -90,14 +93,17 @@ export default function AddApplicantForm(props) {
     }
 
     const loadApplicant = () => {
-        if(!hasId())return;
-        axios.get('/applicants/' + props.match.params.id)
+        let config = {
+            headers: {'Authorization': "bearer " + props.token}
+        };
+
+        if (!hasId()) return;
+        axios.get('/applicants/' + props.match.params.id, config)
             .then(response => {
                 setFirstName(response.data.firstName)
                 setLastName(response.data.lastName)
                 setDiscordId(response.data.discordId)
                 setState(response.data.state)
-
             });
     }
 
@@ -124,9 +130,9 @@ export default function AddApplicantForm(props) {
                     <AddIcon/>
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    {hasId()?"Edit": "Add"} Applicant
+                    {hasId() ? "Edit" : "Add"} Applicant
                 </Typography>
-                <form className={classes.form} noValidate>
+                <form className={classes.form}>
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={6}>
                             <TextField
@@ -185,12 +191,21 @@ export default function AddApplicantForm(props) {
                         className={classes.submit}
                         onClick={postDataHandler}
                     >
-                        {hasId()?"Save Applicant": "Add Applicant"}
+                        {hasId() ? "Save Applicant" : "Add Applicant"}
                     </Button>
-                    <Link to="/" style={{cursor:'pointer'}}>Back to list</Link>
+                    <Link to="/" style={{cursor: 'pointer'}}>Back to list</Link>
                 </form>
             </div>
 
         </Container>
     );
 }
+
+const mapStateToProps = state => {
+    return {
+        token: state.auth.token
+    };
+};
+
+
+export default connect(mapStateToProps, null)(AddApplicantForm)

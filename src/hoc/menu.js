@@ -3,16 +3,15 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-
 import Drawer from '@material-ui/core/Drawer';
 
-
-
 import MenuItem from "@material-ui/core/MenuItem";
-import {NavLink} from "react-router-dom";
+import {NavLink, Redirect} from "react-router-dom";
+import {connect} from "react-redux";
+
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -38,10 +37,8 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export default function ButtonAppBar() {
+ function ButtonAppBar(props) {
     const classes = useStyles();
-
-
     const [state, setState] = React.useState({
         top: false,
         left: false,
@@ -53,14 +50,13 @@ export default function ButtonAppBar() {
     const toggleDrawer = (side: DrawerSide, open: boolean) => (
         event: React.KeyboardEvent | React.MouseEvent,
     ) => {
-
-
         setState({ ...state, [side]: open });
     };
 
 
-
-
+     if (!props.isAuth) {
+         return   <Redirect to="/auth" />;
+     }
 
     return (
         <div className={classes.root}>
@@ -72,8 +68,10 @@ export default function ButtonAppBar() {
                     <Typography variant="h6" className={classes.title}>
                         OpusV
                     </Typography>
-
-                    <Button color="inherit">Logout</Button>
+                    {!props.isAuth
+                        ? <NavLink to="/auth" color="inherit">Login</NavLink>
+                        : <NavLink to="/logout" color="inherit">Logout</NavLink>
+                    }
                 </Toolbar>
             </AppBar>
             <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
@@ -93,4 +91,13 @@ export default function ButtonAppBar() {
             </Drawer>
         </div>
     );
+
+
 }
+const mapStateToProps = state => {
+    return {
+        isAuth: state.auth.token!==null
+    };
+};
+
+export default connect( mapStateToProps, null )(ButtonAppBar)

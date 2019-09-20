@@ -1,6 +1,7 @@
 import React, {Component} from "react";
-import axios from '../axios-applicants';
+import axios from '../axios';
 import ApplicantTable from "../components/ApplicantTable";
+import {connect} from "react-redux";
 
 class ApplicantList extends Component {
     state = {
@@ -11,8 +12,13 @@ class ApplicantList extends Component {
         this.loadApplicantsList()
     }
 
-    loadApplicantsList(){
-        axios.get('applicants')
+    loadApplicantsList() {
+        let config = {
+            headers: {'Authorization': "bearer " + this.props.token}
+        };
+
+        axios.get('applicants',
+            config)
             .then(response => {
                 const updatedApplicants = response.data.map(applicants => {
                     return {
@@ -21,13 +27,16 @@ class ApplicantList extends Component {
                 });
                 this.setState({applicants: updatedApplicants});
             });
-}
+    }
 
     deleteApplicantHandler = (id) => {
 
-
         if (window.confirm("Delete the item?")) {
-            axios.delete('/applicants/' + id)
+
+            let config = {
+                headers: {'Authorization': "bearer " + this.props.token}
+            };
+            axios.delete('/applicants/' + id, config)
                 .then(response => {
                     this.loadApplicantsList()
                 });
@@ -44,4 +53,10 @@ class ApplicantList extends Component {
     }
 }
 
-export default ApplicantList;
+const mapStateToProps = state => {
+    return {
+        token: state.auth.token
+    };
+};
+
+export default connect(mapStateToProps, null)(ApplicantList)

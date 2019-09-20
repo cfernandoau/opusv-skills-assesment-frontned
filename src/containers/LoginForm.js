@@ -1,33 +1,16 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
-import Grid from '@material-ui/core/Grid';
-
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
 import * as actions from '../store/actions/index';
+import {Redirect} from 'react-router-dom'
 
-function Copyright() {
-    return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            {'Copyright © '}
-            <Link color="inherit" href="https://material-ui.com/">
-                Your Website
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
 
 const useStyles = makeStyles(theme => ({
     '@global': {
@@ -55,25 +38,26 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-
-const Auth =(props) => {
+const LoginForm = (props) => {
     const classes = useStyles();
     const [emailText, setEmail] = useState("");
     const [passwordText, setPassword] = useState("");
-
-
-    const submitHandler = ( event ) => {
+    const submitHandler = (event) => {
         event.preventDefault();
-        props.onAuth( emailText, passwordText );
+        props.onAuth(emailText, passwordText);
     }
 
 
+    if (props.isAuth) {
+        return <Redirect to="/"/>;
+    }
+
     return (
         <Container component="main" maxWidth="xs">
-            <CssBaseline />
+            <CssBaseline/>
             <div className={classes.paper}>
                 <Avatar className={classes.avatar}>
-                    <LockOutlinedIcon />
+                    <LockOutlinedIcon/>
                 </Avatar>
                 <Typography component="h1" variant="h5">
                     Sign in
@@ -116,28 +100,23 @@ const Auth =(props) => {
                     >
                         Sign In
                     </Button>
-                    <Grid container>
-                        <Grid item xs>
-                            <Link href="#" variant="body2">
-                                Forgot password?
-                            </Link>
-                        </Grid>
-                        <Grid item>
-                            <Link href="#" variant="body2">
-                                {"Don't have an account? Sign Up"}
-                            </Link>
-                        </Grid>
-                    </Grid>
                 </form>
             </div>
-
         </Container>
     );
 }
+
+
 const mapDispatchToProps = dispatch => {
     return {
-        onAuth: ( email, password ) => dispatch( actions.auth( email, password ) )
+        onAuth: (email, password) => dispatch(actions.auth(email, password))
     };
 };
 
-export default connect( null, mapDispatchToProps )( Auth );
+const mapStateToProps = state => {
+    return {
+        isAuth: state.auth.token !== null
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

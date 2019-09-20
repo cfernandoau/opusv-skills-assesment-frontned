@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
@@ -11,11 +11,12 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import {Link} from "react-router-dom";
+
 export default function ApplicantTable(props) {
 
-    let applicantsList=[]
-    if(props.applicants) {
-         applicantsList = props.applicants.map(applicant => {
+    let applicantsList = []
+    if (props.applicants) {
+        applicantsList = props.applicants.map(applicant => {
             /**
              * Build table rows
              */
@@ -30,10 +31,11 @@ export default function ApplicantTable(props) {
                             <ButtonGroup size="small" aria-label="small outlined button group">
                                 <Button>Accept</Button>
                                 <Button>deny</Button>
-                                <Button>
+                                <Button color="primary">
                                     <Link to={"/put/" + applicant.id}>Edit</Link>
                                 </Button>
-                                <Button id={applicant.id} onClick={() => props.delete(applicant.id)}>Delete</Button>
+                                <Button id={applicant.id} onClick={() => props.delete(applicant.id)}
+                                        color="secondary">Delete</Button>
                             </ButtonGroup>
                         </Grid>
                     </TableCell>
@@ -50,9 +52,11 @@ export default function ApplicantTable(props) {
             <CssBaseline/>
             <Container maxWidth="md">
                 <h3>Applicants List</h3>
-                <Button variant="contained" color="primary"  style={{"margin-bottom":'20px' }}>
-                    <Link to='/add'   > + Add New</Link>
+                <Button variant="contained" color="primary">
+                    <Link to='/add'> + Add New</Link>
                 </Button>
+                <br/>
+                <br/>
                 <Paper>
                     <Table>
                         <TableHead>

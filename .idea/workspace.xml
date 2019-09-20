@@ -2,22 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bf46691-a2b4-4695-94c8-8e134c2b2f57" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/containers/Auth.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/Auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/actions/actionTypes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/actions/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/actions/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/utility.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Logout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducers/rootReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ApplicantsTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ApplicantTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/applicant/Add.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ApplicantForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ApplicantList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/axios-applicants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ApplicantForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ApplicantForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ApplicantTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ApplicantTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ApplicantList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ApplicantList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Auth.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/LoginForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/actionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -57,9 +61,11 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\REACT\opusv-skills-assesment\src\hoc" />
       <recent name="D:\REACT\opusv-skills-assesment\src\components" />
       <recent name="D:\REACT\opusv-skills-assesment\src\store\actions" />
       <recent name="D:\REACT\opusv-skills-assesment\src\store\reducers" />
@@ -91,8 +97,18 @@
       <workItem from="1568443433008" duration="21074000" />
       <workItem from="1568520335157" duration="35497000" />
       <workItem from="1568611636459" duration="17380000" />
-      <workItem from="1568705638015" duration="9448000" />
+      <workItem from="1568705638015" duration="22507000" />
+      <workItem from="1568837932215" duration="2904000" />
+      <workItem from="1568841836563" duration="33430000" />
     </task>
+    <task id="LOCAL-00001" summary="Auth form completed">
+      <created>1568718855913</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568718855913</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,11 +127,15 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Auth form completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Auth form completed" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/menu.js</url>
+          <url>file://$PROJECT_DIR$/src/hoc/menu.js</url>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
